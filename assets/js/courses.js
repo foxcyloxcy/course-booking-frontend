@@ -6,6 +6,7 @@ let courseData;
 let courseData2;
 let container = document.querySelector("#coursesContainer")
 let container2 = document.querySelector("#coursesContainer2")
+import baseURL from "../baseURL/baseURL";
 
 
 
@@ -25,7 +26,7 @@ if(adminUser === "false" || !adminUser){
 //Fetch the courses from our API
 
 
-fetch('http://localhost:3000/api/courses/active')
+fetch(`${baseURL}api/courses/active`)
 .then(res => res.json())
 .then(data => {
 	console.log(data)
@@ -87,7 +88,7 @@ fetch('http://localhost:3000/api/courses/active')
 if(token === null){
 	container2 = ""
 }else{
-	fetch('http://localhost:3000/api/courses/inActive')
+	fetch(`${baseURL}api/courses/inActive`)
 	.then(res => res.json())
 	.then(data2 =>{
 	console.log(data2)

@@ -3,6 +3,7 @@
 
 //instantiate a URLSearchParams object so we can acess specifics parts of the query string
 let params = new URLSearchParams(window.location.search)
+import baseURL from "../baseURL/baseURL";
 
 //get returns the value of the key passed as an argument, then we store it in a variable
 let token = localStorage.getItem("token");
@@ -22,7 +23,7 @@ if(token === null){
 }else{
 
 	if(adminUser === "false"){
-	fetch(`http://localhost:3000/api/courses/${courseId}`)
+	fetch(`${baseURL}api/courses/${courseId}`)
 	.then(res => res.json())
 	.then(data => {
 		console.log(data)
@@ -36,7 +37,7 @@ if(token === null){
 		 document.querySelector('#enrollButton').
 		 addEventListener("click", ()=> {
 
-		 fetch("http://localhost:3000/api/users/enroll/", {
+		 fetch(`${baseURL}api/users/enroll/`, {
             method: "PUT",
             headers:{
                 "Content-Type" : "application/json",
@@ -61,7 +62,7 @@ if(token === null){
 		 })
 	}else{
 
-	fetch('http://localhost:3000/api/users/details',{
+	fetch(`${baseURL}api/users/details`,{
 		headers:{
 			'Authorization': `Bearer ${token}`
 		}
@@ -80,7 +81,7 @@ if(token === null){
 		 document.querySelector('#enrollButton').
 		 addEventListener("click", ()=> {
 
-		 fetch("http://localhost:3000/api/users/enroll/", {
+		 fetch(`${baseURL}api/users/enroll/`, {
             method: "PUT",
             headers:{
                 "Content-Type" : "application/json",

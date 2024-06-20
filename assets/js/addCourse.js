@@ -1,3 +1,4 @@
+import baseURL from "../baseURL/baseURL";
 let formSubmit = document.querySelector('#createCourse')
 let token = localStorage.getItem("token");
 let adminUser = localStorage.getItem("isAdmin")
@@ -26,7 +27,7 @@ if(token === null){
 	let token = localStorage.getItem('token')
 
 	// console.log(courseName, description, price)
-	fetch('http://localhost:3000/api/courses',{ 
+	fetch(`${baseURL}api/courses`,{ 
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json',
