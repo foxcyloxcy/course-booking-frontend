@@ -9,7 +9,7 @@ let email = document.querySelector("#userEmail")
 let mobileNo = document.querySelector("#contactNumber")
 let editProfile = document.querySelector("#editProfileButton")
 
-  fetch('https://lucky-capstone-2.herokuapp.com/api/users/details', {
+  fetch('http://localhost:3000/api/users/details', {
     headers: {
       'Authorization': `Bearer ${token}`
     }
@@ -33,7 +33,7 @@ let editProfile = document.querySelector("#editProfileButton")
         let userId = data._id
 
 
-        fetch('https://lucky-capstone-2.herokuapp.com/api/users/update', {
+        fetch('http://localhost:3000/api/users/update', {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json',

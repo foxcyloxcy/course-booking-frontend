@@ -25,7 +25,7 @@ if(adminUser === "false" || !adminUser){
 //Fetch the courses from our API
 
 
-fetch('https://lucky-capstone-2.herokuapp.com/api/courses/active')
+fetch('http://localhost:3000/api/courses/active')
 .then(res => res.json())
 .then(data => {
 	console.log(data)
@@ -87,7 +87,7 @@ fetch('https://lucky-capstone-2.herokuapp.com/api/courses/active')
 if(token === null){
 	container2 = ""
 }else{
-	fetch('https://lucky-capstone-2.herokuapp.com/api/courses/inActive')
+	fetch('http://localhost:3000/api/courses/inActive')
 	.then(res => res.json())
 	.then(data2 =>{
 	console.log(data2)

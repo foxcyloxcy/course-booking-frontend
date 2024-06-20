@@ -7,7 +7,7 @@ if(!token || token === null){
 	alert("You must log in first.")
 	window.location.replace('./login.html')
 }else{
-	fetch('https://lucky-capstone-2.herokuapp.com/api/users/details', {
+	fetch('http://localhost:3000/api/users/details', {
 		headers: {
 			'Authorization': `Bearer ${token}`
 		}
@@ -47,7 +47,7 @@ let coursesContainer = document.querySelector("#coursesContainer");
 
 		data.enrollments.map(course => {
 			// console.log()
-			fetch(`https://lucky-capstone-2.herokuapp.com/api/courses/${course.courseId}`)
+			fetch(`http://localhost:3000/api/courses/${course.courseId}`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data)

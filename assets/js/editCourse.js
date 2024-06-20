@@ -23,7 +23,7 @@ let name = document.querySelector("#courseName")
 let price = document.querySelector("#coursePrice")
 let description = document.querySelector("#courseDescription")
 
-fetch(`https://lucky-capstone-2.herokuapp.com/api/courses/${courseId}`)
+fetch(`http://localhost:3000/api/courses/${courseId}`)
   .then((res) => res.json())
   .then((data) => {
     console.log(data)
@@ -42,7 +42,7 @@ fetch(`https://lucky-capstone-2.herokuapp.com/api/courses/${courseId}`)
 
         let token = localStorage.getItem('token')
 
-        fetch('https://lucky-capstone-2.herokuapp.com/api/courses', {
+        fetch('http://localhost:3000/api/courses', {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json',

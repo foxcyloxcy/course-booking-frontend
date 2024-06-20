@@ -26,7 +26,7 @@ if(token === null){
 	let token = localStorage.getItem('token')
 
 	// console.log(courseName, description, price)
-	fetch('https://lucky-capstone-2.herokuapp.com/api/courses',{ 
+	fetch('http://localhost:3000/api/courses',{ 
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ let courseId = params.get('courseId')
 
 let token = localStorage.getItem('token')
 
-fetch(`https://lucky-capstone-2.herokuapp.com/api/courses/${courseId}`, {
+fetch(`http://localhost:3000/api/courses/${courseId}`, {
 	method: "PUT",
 	 headers: {
 	'Authorization': `Bearer ${token}`

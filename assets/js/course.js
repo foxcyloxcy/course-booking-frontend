@@ -22,7 +22,7 @@ if(token === null){
 }else{
 
 	if(adminUser === "false"){
-	fetch(`https://lucky-capstone-2.herokuapp.com/api/courses/${courseId}`)
+	fetch(`http://localhost:3000/api/courses/${courseId}`)
 	.then(res => res.json())
 	.then(data => {
 		console.log(data)
@@ -36,7 +36,7 @@ if(token === null){
 		 document.querySelector('#enrollButton').
 		 addEventListener("click", ()=> {
 
-		 fetch("https://lucky-capstone-2.herokuapp.com/api/users/enroll/", {
+		 fetch("http://localhost:3000/api/users/enroll/", {
             method: "PUT",
             headers:{
                 "Content-Type" : "application/json",
@@ -61,7 +61,7 @@ if(token === null){
 		 })
 	}else{
 
-	fetch('https://lucky-capstone-2.herokuapp.com/api/users/details',{
+	fetch('http://localhost:3000/api/users/details',{
 		headers:{
 			'Authorization': `Bearer ${token}`
 		}
@@ -80,7 +80,7 @@ if(token === null){
 		 document.querySelector('#enrollButton').
 		 addEventListener("click", ()=> {
 
-		 fetch("https://lucky-capstone-2.herokuapp.com/api/users/enroll/", {
+		 fetch("http://localhost:3000/api/users/enroll/", {
             method: "PUT",
             headers:{
                 "Content-Type" : "application/json",
