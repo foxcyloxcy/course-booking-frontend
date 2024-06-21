@@ -3,7 +3,7 @@
 
 //instantiate a URLSearchParams object so we can acess specifics parts of the query string
 let params = new URLSearchParams(window.location.search)
-import baseURL from "../baseURL/baseURL";
+import baseURL from "../baseURL/baseURL.js";
 
 //get returns the value of the key passed as an argument, then we store it in a variable
 let token = localStorage.getItem("token");

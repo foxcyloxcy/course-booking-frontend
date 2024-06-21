@@ -6,7 +6,7 @@ let courseData;
 let courseData2;
 let container = document.querySelector("#coursesContainer")
 let container2 = document.querySelector("#coursesContainer2")
-import baseURL from "../baseURL/baseURL";
+import baseURL from "../baseURL/baseURL.js";
 
 
 

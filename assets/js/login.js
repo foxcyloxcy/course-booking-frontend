@@ -1,6 +1,7 @@
 let token = localStorage.getItem("token");
 
 let loginForm = document.querySelector("#logInUser")
+import baseURL from "../baseURL/baseURL.js";
 
 
 	if(token !== null){
@@ -24,7 +25,7 @@ let loginForm = document.querySelector("#logInUser")
 	if(email === "" || password === ""){
 		alert("Please input your email and/or password.")
 	}else{
-		fetch('http://localhost:3000/api/users/login', {
+		fetch(`${baseURL}api/users/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ let loginForm = document.querySelector("#logInUser")
 				//store JWT in local storage
 				localStorage.setItem('token', data.access)
 				//send a fetch request to decode JWT and obtain user's ID and role
-				fetch('http://localhost:3000/api/users/details', {
+				fetch(`${baseURL}api/users/details`, {
 					headers: {
 						'Authorization': `Bearer ${data.access}`
 					}

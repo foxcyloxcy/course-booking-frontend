@@ -1,4 +1,4 @@
-import baseURL from "../baseURL/baseURL";
+import baseURL from "../baseURL/baseURL.js";
 let formSubmit = document.querySelector('#createCourse')
 let token = localStorage.getItem("token");
 let adminUser = localStorage.getItem("isAdmin")
