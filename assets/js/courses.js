@@ -33,7 +33,7 @@ fetch(`${baseURL}api/courses/active`)
 
 	//if the number of courses fetched is less than 1, display no course available
 	if(data.length === 0){
-		courseData = "No courses available"
+		courseData = "No courses available."
 	}else{
 		//iterate the courses collection display
 		courseData = data.map(course => {
@@ -95,7 +95,7 @@ if(token === null){
 
 
 		if(data2.length === 0){
-		container2 = null
+		courseData2 = ""
 		}else{
 		courseData2 = data2.map(course2 =>{
 			console.log(course2)
