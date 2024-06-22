@@ -5,7 +5,7 @@
 }
 
 .about{
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Maven Pro', sans-serif;
 }
 .about-paragraph{
   font-size: 20px;
@@ -27,7 +27,8 @@ html, body{
   align-items: center;
   vertical-align: middle;
   background-color: #ffeaee;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: 'Maven Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 hr.style {
   border-top: 1px solid #000000;
@@ -98,7 +99,7 @@ hr.style:after {
 .nav-link{
   color: #000000;
   align-items: center;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: 'Maven Pro', sans-serif;
 }
 .nav-index{
   align-items: center;
@@ -276,7 +277,7 @@ footer{
   box-sizing: border-box;
   width: 100%;
   text-align: left;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: 'Maven Pro', sans-serif;
   font: bold 16px;
   padding: 50px 50px 60px 50px;
   margin-top: 80px;
