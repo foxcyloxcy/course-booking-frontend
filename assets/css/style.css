@@ -137,7 +137,10 @@ hr.style:after {
   text-decoration: none;
   margin: 5px;
 }
-
+.welcome-message{
+  display: flex;
+  justify-content: center;
+}
 /* Page content */
 .content {
   padding: 16px;
