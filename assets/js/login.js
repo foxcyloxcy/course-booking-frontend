@@ -51,6 +51,7 @@ import baseURL from "../baseURL/baseURL.js";
 					// console.log(data)
 					localStorage.setItem('id', data._id)
 					localStorage.setItem('isAdmin', data.isAdmin)
+					localStorage.setItem('firstName', data.firstName)
 					window.location.replace("./courses.html")
 				})
 			}else{
