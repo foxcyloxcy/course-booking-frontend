@@ -1,8 +1,10 @@
 let navItemsIndex = document.querySelector("#navSessionIndex")
 let navItemsIndex2 = document.querySelector("#navSessionIndex2")
+let displayFirstName = document.querySelector("#displayFirstName")
 
 
 let userToken = localStorage.getItem("token")
+let userFirstName = localStorage.getItem("firstName")
 
 if(!userToken){
 	navItemsIndex.innerHTML =
@@ -26,4 +28,11 @@ if(!userToken){
 	</li>
 
 	`
+}
+
+
+if(!userFirstName){
+	displayFirstName.innerHTML = ""
+}else{
+	displayFirstName.innerHTML = "&nbsp;" + `${userFirstName}!`
 }
