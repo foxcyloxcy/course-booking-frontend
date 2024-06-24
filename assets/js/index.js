@@ -1,6 +1,7 @@
 let navItemsIndex = document.querySelector("#navSessionIndex")
 let navItemsIndex2 = document.querySelector("#navSessionIndex2")
 let displayFirstName = document.querySelector("#displayFirstName")
+let displayWelcomeMessage = document.querySelector("#displayWelcomeMessage")
 
 
 let userToken = localStorage.getItem("token")
@@ -33,6 +34,8 @@ if(!userToken){
 
 if(!userFirstName){
 	displayFirstName.innerHTML = ""
+	displayWelcomeMessage.innerHTML = "Welcome!"
 }else{
 	displayFirstName.innerHTML = "&nbsp;" + `${userFirstName}!`
+	displayWelcomeMessage.innerHTML = "Hello"
 }
