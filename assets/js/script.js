@@ -1,5 +1,11 @@
 let navItems = document.querySelector("#navSession")
 let navItems1 = document.querySelector("#navSession1")
+let yearNow = document.querySelector("#year")
+
+if(yearNow){
+  yearNow.innerHTML = new Date().getFullYear();
+}
+
 
 let userToken = localStorage.getItem("token")
 if (navItems && navItems1) {
