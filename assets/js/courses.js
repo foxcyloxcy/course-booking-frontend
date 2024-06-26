@@ -6,6 +6,7 @@ let courseData;
 let courseData2;
 let container = document.querySelector("#coursesContainer")
 let container2 = document.querySelector("#coursesContainer2")
+let hrContainer = document.querySelector("#hrContainer")
 import baseURL from "../baseURL/baseURL.js";
 
 
@@ -15,6 +16,7 @@ import baseURL from "../baseURL/baseURL.js";
 if(adminUser === "false" || !adminUser){
 	modalButton.innerHTML = null
 }else{
+	hrContainer.innerHTML = `<hr class="style">`
 	modalButton.innerHTML = 
 	`
 	<div class="col-md-2 offset-md-10">
