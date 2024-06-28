@@ -1,6 +1,7 @@
 let token = localStorage.getItem("token");
 
 let loginForm = document.querySelector("#logInUser")
+let swalContainer = document.querySelector("#swalContainer")
 import baseURL from "../baseURL/baseURL.js";
 
 
@@ -56,7 +57,12 @@ import baseURL from "../baseURL/baseURL.js";
 				})
 			}else{
 				//authentication failure
-				alert("Login failed.")
+				swalContainer.innerHTML = Swal.fire({
+					title: 'Login failed.',
+					text: 'Incorrect email and password.',
+					icon: 'error',
+					confirmButtonText: 'Ok'
+				  })
 			}
 		})
 	}
