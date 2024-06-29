@@ -18,7 +18,12 @@ let enrollContainer = document.querySelector("#enrollContainer");
 
 
 if(token === null){
-	alert("You need to log in first!")
+	swalContainer.innerHTML = Swal.fire({
+		title: 'Ooops!',
+		text: "You need to log in first!",
+		icon: 'error',
+		confirmButtonText: 'Ok'
+	})
 	window.location.replace('./login.html')
 }else{
 
@@ -53,10 +58,20 @@ if(token === null){
                 .then((data) =>{
                     console.log(data)
                 if (data === true){
-                    alert("Thank you for enrolling!")
+					swalContainer.innerHTML = Swal.fire({
+						title: 'Success!',
+						text: "Thank you for enrolling!",
+						icon: 'success',
+						confirmButtonText: 'Ok'
+					})
                     window.location.replace("./courses.html")
                 }else{
-                    alert("Oops.. Something went wrong!")
+					swalContainer.innerHTML = Swal.fire({
+						title: 'Ooops!',
+						text: "Something went wrong!",
+						icon: 'error',
+						confirmButtonText: 'Ok'
+					})
                 }
             })
 		 })
@@ -97,10 +112,20 @@ if(token === null){
                 .then((data) =>{
                     console.log(data)
                 if (data === true){
-                    alert("Thank you for enrolling!")
+					swalContainer.innerHTML = Swal.fire({
+						title: 'Success!',
+						text: "Thank you for enrolling!",
+						icon: 'success',
+						confirmButtonText: 'Ok'
+					})
                     window.location.replace("./courses.html")
                 }else{
-                    alert("Oops.. Something went wrong!")
+					swalContainer.innerHTML = Swal.fire({
+						title: 'Ooops!',
+						text: "Something went wrong!",
+						icon: 'error',
+						confirmButtonText: 'Ok'
+					})
                 }
             })
 		 })
@@ -112,7 +137,12 @@ if(token === null){
 			 document.querySelector('#enrollButton').
 			 addEventListener("click", ()=> {
 
-				alert("You are already enrolled")
+				swalContainer.innerHTML = Swal.fire({
+					title: 'Ooops!',
+					text: "You are already enrolled!",
+					icon: 'error',
+					confirmButtonText: 'Ok'
+				})
 				window.location.replace('./courses.html')
 
 				 	})
@@ -124,7 +154,12 @@ if(token === null){
 	})
 	
 	}else{
-		alert("You cannot enroll!")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: "You cannot enroll!",
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		})
 		window.location.replace("./courses.html")
 	}
 }
