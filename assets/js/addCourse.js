@@ -56,7 +56,7 @@ if (token === null) {
 				.then(data => {
 					if (data === true) {
 						swalContainer.innerHTML = Swal.fire({
-							title: '',
+							title: 'Success!',
 							text: "Successfully added a course!",
 							icon: 'success',
 							confirmButtonText: 'Ok'
