@@ -6,14 +6,25 @@ let adminUser = localStorage.getItem("isAdmin")
 // console.log(formSubmit)
 
 if(token === null){
-	
-	alert("You cannot do that! \n Login first!")
+
+	swalContainer.innerHTML = Swal.fire({
+		title: 'Ooops!',
+		text: 'You cannot do that! \n You need to login first!',
+		icon: 'error',
+		confirmButtonText: 'Ok'
+	  })
 	 window.location.replace("./login.html")
+
 }else{
 
 	if(adminUser === "false"){
 
- 		 alert("You cannot do that!")
+		  swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: "You can't do that! You don't have access.",
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		  })
  		 window.location.replace("./courses.html")
 
 	}else{
@@ -43,12 +54,22 @@ if(token === null){
 		return res.json()
 	})
 	.then(data => {
-		if (data === true){
-			alert("Successfully added a course!")
-			window.location.replace("./courses.html")
-		}else {
-			alert("Oops.. Something went wrong!")
-		}
+				if (data === true){
+					swalContainer.innerHTML = Swal.fire({
+						title: '',
+						text: "Successfully added a course!",
+						icon: 'success',
+						confirmButtonText: 'Ok'
+						})
+					window.location.replace("./courses.html")
+				}else {
+					swalContainer.innerHTML = Swal.fire({
+						title: 'Ooops!',
+						text: "Course not added, Please try again.",
+						icon: 'error',
+						confirmButtonText: 'Ok'
+					})
+				}
 		// console.log(data)
 			})
 		})
