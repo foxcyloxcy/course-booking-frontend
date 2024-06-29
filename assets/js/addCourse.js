@@ -2,6 +2,7 @@ import baseURL from "../baseURL/baseURL.js";
 let formSubmit = document.querySelector('#createCourse')
 let token = localStorage.getItem("token");
 let adminUser = localStorage.getItem("isAdmin")
+let swalContainer = document.querySelector("#swalContainer")
 
 // console.log(formSubmit)
 
@@ -56,12 +57,22 @@ if (token === null) {
 				.then(data => {
 					if (data === true) {
 						swalContainer.innerHTML = Swal.fire({
+							showDenyButton: true,
 							title: 'Success!',
-							text: "Successfully added a course!",
+							text: "Successfully added a course! \n Do you like to add another course?",
 							icon: 'success',
-							confirmButtonText: 'Ok'
+							confirmButtonText: 'Yes',
+							denyButtonText: 'No',
 						})
-						window.location.replace("./courses.html")
+						.then((result) => {
+							if (result.isConfirmed) {
+								courseName = ""
+								description = ""
+								price = null
+							} else if (result.isDenied) {
+								window.location.replace("./courses.html")
+							}
+						  })
 					} else {
 						swalContainer.innerHTML = Swal.fire({
 							title: 'Ooops!',
