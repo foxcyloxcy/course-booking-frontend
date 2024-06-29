@@ -479,3 +479,7 @@ footer {
   }
 
 }
+
+#swalContainer{
+  display: none;
+}
