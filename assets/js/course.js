@@ -15,6 +15,7 @@ let courseName = document.querySelector("#courseName");
 let courseDesc = document.querySelector("#courseDesc");
 let coursePrice = document.querySelector("#coursePrice");
 let enrollContainer = document.querySelector("#enrollContainer");
+let swalContainer = document.querySelector("#swalContainer")
 
 
 if(token === null){
