@@ -1,5 +1,6 @@
 import baseURL from "../baseURL/baseURL.js";
 let formSubmit = document.querySelector('#createCourse')
+let formReset = document.getElementById("createCourse")
 let token = localStorage.getItem("token");
 let adminUser = localStorage.getItem("isAdmin")
 let swalContainer = document.querySelector("#swalContainer")
@@ -66,9 +67,7 @@ if (token === null) {
 						})
 						.then((result) => {
 							if (result.isConfirmed) {
-								courseName = ""
-								description = ""
-								price = null
+								formReset.reset()
 							} else if (result.isDenied) {
 								window.location.replace("./courses.html")
 							}
