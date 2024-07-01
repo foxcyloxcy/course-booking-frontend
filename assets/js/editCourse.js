@@ -20,7 +20,6 @@ if(token === null){
 
   if(adminUser === "false"){
 
-      alert("")
       swalContainer.innerHTML = Swal.fire({
         title: 'Ooops!',
         text: "You cannot do that! \n You are not authorized.",
@@ -72,7 +71,12 @@ fetch(`http://localhost:3000/api/courses/${courseId}`)
           if(data === true){
             window.location.replace('./courses.html')
           }else{
-            alert("Something went wrong.")
+            swalContainer.innerHTML = Swal.fire({
+              title: 'Ooops!',
+              text: "Something went wrong.",
+              icon: 'error',
+              confirmButtonText: 'Ok'
+            })
           }
         })
       })
