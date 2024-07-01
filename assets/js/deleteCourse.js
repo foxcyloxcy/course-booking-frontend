@@ -7,6 +7,8 @@ let courseId = params.get('courseId')
 // console.log(courseId)
 
 let token = localStorage.getItem('token')
+let swalContainer = document.querySelector("#swalContainer")
+
 
 fetch(`http://localhost:3000/api/courses/${courseId}`, {
 	method: "DELETE",
@@ -19,6 +21,11 @@ fetch(`http://localhost:3000/api/courses/${courseId}`, {
 	if(data === true){
 		window.location.replace('./courses.html')
 	}else{
-		alert("Something went wrong.")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: "Something went wrong.",
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		})
 	}
 })
