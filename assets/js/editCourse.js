@@ -3,18 +3,30 @@ let params = new URLSearchParams(window.location.search)
 let courseId = params.get('courseId')
 let adminUser = localStorage.getItem("isAdmin")
 let token = localStorage.getItem("token");
+let swalContainer = document.querySelector("#swalContainer")
 
 // console.log(courseId)
 if(token === null){
 
-  alert("You cannot do that! \n Login first!")
+  swalContainer.innerHTML = Swal.fire({
+    title: 'Ooops!',
+    text: "You cannot do that! \n Login first!",
+    icon: 'error',
+    confirmButtonText: 'Ok'
+  })
   window.location.replace("./login.html")
 
 }else{
 
   if(adminUser === "false"){
 
-      alert("You cannot do that!")
+      alert("")
+      swalContainer.innerHTML = Swal.fire({
+        title: 'Ooops!',
+        text: "You cannot do that! \n You are not authorized.",
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
       window.location.replace("./courses.html")
 
   }else{
