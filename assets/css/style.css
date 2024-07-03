@@ -483,3 +483,7 @@ footer {
 #swalContainer{
   display: none;
 }
+
+.btn-primary:disabled{
+  background-color: grey;
+}
