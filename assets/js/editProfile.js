@@ -95,5 +95,10 @@ fetch('http://localhost:3000/api/users/details', {
     })
   })
 
+  cancelButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.replace('./profile.html')
+  })
+
 
 
