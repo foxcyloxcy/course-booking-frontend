@@ -7,9 +7,49 @@ let firstName = document.querySelector("#userName")
 let lastName = document.querySelector("#lastName")
 let email = document.querySelector("#userEmail")
 let mobileNo = document.querySelector("#contactNumber")
+
+let firstNameInput = document.getElementById("userName")
+let lastNameInput = document.getElementById("lastName")
+let emailInput = document.getElementById("userEmail")
+let mobileNoInput = document.getElementById("contactNumber")
+
+
 let editProfile = document.querySelector("#editProfileButton")
 let cancelButton = document.querySelector("#cancelButton")
+let saveButton = document.getElementById("saveButton")
 let swalContainer = document.querySelector("#swalContainer")
+
+firstNameInput.addEventListener("input", () => {
+  if(firstName.placeholder === firstName.value){
+    saveButton.disabled = true
+  }else{
+    saveButton.disabled = false
+  }
+})
+
+lastNameInput.addEventListener("input", () => {
+  if(lastName.placeholder === lastName.value){
+    saveButton.disabled = true
+  }else{
+    saveButton.disabled = false
+  }
+})
+
+emailInput.addEventListener("input", () => {
+  if(email.placeholder === email.value){
+    saveButton.disabled = true
+  }else{
+    saveButton.disabled = false
+  }
+})
+
+mobileNoInput.addEventListener("input", () => {
+  if(mobileNo.placeholder === mobileNo.value){
+    saveButton.disabled = true
+  }else{
+    saveButton.disabled = false
+  }
+})
 
 fetch('http://localhost:3000/api/users/details', {
   headers: {
@@ -28,10 +68,10 @@ fetch('http://localhost:3000/api/users/details', {
     document.querySelector("#editProfile").addEventListener("submit", (e) => {
       e.preventDefault()
       
-      let unoName = firstName.value
-      let surName = lastName.value
-      let elecMail = email.value
-      let cpNo = mobileNo.value
+      let unoName = ""
+      let surName = ""
+      let elecMail = ""
+      let cpNo = ""
       let userId = data._id
 
       if(firstName.value){
