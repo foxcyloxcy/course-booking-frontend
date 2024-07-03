@@ -27,12 +27,37 @@ fetch('http://localhost:3000/api/users/details', {
 
     document.querySelector("#editProfile").addEventListener("submit", (e) => {
       e.preventDefault()
-
+      
       let unoName = firstName.value
       let surName = lastName.value
       let elecMail = email.value
       let cpNo = mobileNo.value
       let userId = data._id
+
+      if(firstName.value){
+        unoName = firstName.value
+      }else{
+        unoName = data.firstName
+      }
+
+      if(lastName.value){
+        surName = lastName.value
+      }else{
+        surName = data.lastName
+      }
+
+      if(email.value){
+        elecMail = email.value
+      }else{
+        elecMail = data.email
+      }
+
+      if(mobileNo.value){
+        cpNo = mobileNo.value
+      }else{
+        cpNo = data.mobileNo
+      }
+
 
 
       fetch('http://localhost:3000/api/users/update', {
