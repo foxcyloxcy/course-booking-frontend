@@ -9,6 +9,7 @@ let email = document.querySelector("#userEmail")
 let mobileNo = document.querySelector("#contactNumber")
 let editProfile = document.querySelector("#editProfileButton")
 let cancelButton = document.querySelector("#cancelButton")
+let swalContainer = document.querySelector("#swalContainer")
 
 fetch('http://localhost:3000/api/users/details', {
   headers: {
@@ -51,9 +52,19 @@ fetch('http://localhost:3000/api/users/details', {
         .then(res => res.json())
         .then(data => {
           if (data === true) {
-            window.location.replace('./profile.html')
+            swalContainer.innerHTML = Swal.fire({
+              title: 'Sucess',
+              text: "Profile details changed successfully.",
+              icon: 'success',
+              confirmButtonText: 'Ok'
+            })
           } else {
-            alert("Something went wrong.")
+            swalContainer.innerHTML = Swal.fire({
+              title: 'Ooops!',
+              text: "Something went wrong. Please try again.",
+              icon: 'error',
+              confirmButtonText: 'Ok'
+            })
           }
         })
     })
