@@ -1,6 +1,7 @@
 let token = localStorage.getItem("token");
 
 let profileContainer = document.querySelector('#profileContainer');
+let swalContainer = document.querySelector("#swalContainer")
 
 
 if(!token || token === null){
