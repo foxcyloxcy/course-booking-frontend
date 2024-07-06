@@ -11,8 +11,12 @@ import baseURL from "../baseURL/baseURL.js";
 			text: 'You are already logged in!\n Redirecting to courses.',
 			icon: 'warning',
 			confirmButtonText: 'Ok'
+		  }).then((result) => {
+			if (result.isConfirmed) {
+				window.location.replace("./courses.html")
+			}
 		  })
-		window.location.replace("./courses.html")
+		  
 		loginForm.innerHTML =
 		`
 		<h1> You are already logged in! </h1>
