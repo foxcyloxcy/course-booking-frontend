@@ -5,8 +5,16 @@ let swalContainer = document.querySelector("#swalContainer")
 
 
 if(!token || token === null){
-	alert("You must log in first.")
-	window.location.replace('./login.html')
+	swalContainer.innerHTML = Swal.fire({
+		title: 'Ooops!',
+		text: 'You must log in first.',
+		icon: 'warning',
+		confirmButtonText: 'Ok'
+	  }).then((result) => {
+		if (result.isConfirmed) {
+			window.location.replace('./login.html')
+		}
+	  })
 }else{
 	fetch('http://localhost:3000/api/users/details', {
 		headers: {
