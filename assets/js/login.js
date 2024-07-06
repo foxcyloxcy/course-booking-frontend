@@ -24,7 +24,12 @@ import baseURL from "../baseURL/baseURL.js";
 	// console.log(password)
 
 	if(email === "" || password === ""){
-		alert("Please input your email and/or password.")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Login failed.',
+			text: 'Please input your email and/or password.',
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		  })
 	}else{
 		fetch(`${baseURL}api/users/login`, {
 			method: 'POST',
