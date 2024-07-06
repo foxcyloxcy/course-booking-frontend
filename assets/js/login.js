@@ -6,7 +6,12 @@ import baseURL from "../baseURL/baseURL.js";
 
 
 	if(token !== null){
-		alert("You are already logged in!\n Redirecting to courses.")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: 'You are already logged in!\n Redirecting to courses.',
+			icon: 'warning',
+			confirmButtonText: 'Ok'
+		  })
 		window.location.replace("./courses.html")
 		loginForm.innerHTML =
 		`
