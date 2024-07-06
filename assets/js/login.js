@@ -16,11 +16,6 @@ import baseURL from "../baseURL/baseURL.js";
 				window.location.replace("./courses.html")
 			}
 		  })
-		  
-		loginForm.innerHTML =
-		`
-		<h1> You are already logged in! </h1>
-		`
 	}else{
 
 		loginForm.addEventListener("submit", (e) => {
