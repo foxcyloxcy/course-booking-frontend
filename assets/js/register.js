@@ -1,5 +1,6 @@
 let registerForm = document.querySelector("#registerUser")
 import baseURL from "../baseURL/baseURL.js";
+let swalContainer = document.querySelector("#swalContainer")
 
 registerForm.addEventListener("submit", (e) => {
 	e.preventDefault()
