@@ -2,6 +2,7 @@ let params = new URLSearchParams(window.location.search);
 let token = localStorage.getItem("token");
 let courseId = params.get('courseId');
 let adminUser = localStorage.getItem("isAdmin")
+import baseURL from "../baseURL/baseURL.js";
 
 if(token === null){
   alert("You cannot do that! \n Login first!")
