@@ -1,4 +1,5 @@
 let registerForm = document.querySelector("#registerUser")
+import baseURL from "../baseURL/baseURL.js";
 
 registerForm.addEventListener("submit", (e) => {
 	e.preventDefault()
