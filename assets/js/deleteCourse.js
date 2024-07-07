@@ -8,6 +8,7 @@ let courseId = params.get('courseId')
 
 let token = localStorage.getItem('token')
 let swalContainer = document.querySelector("#swalContainer")
+import baseURL from "../baseURL/baseURL.js";
 
 
 fetch(`http://localhost:3000/api/courses/${courseId}`, {
