@@ -3,6 +3,7 @@ let token = localStorage.getItem("token");
 let courseId = params.get('courseId');
 let adminUser = localStorage.getItem("isAdmin")
 import baseURL from "../baseURL/baseURL.js";
+let swalContainer = document.querySelector("#swalContainer")
 
 if(token === null){
   alert("You cannot do that! \n Login first!")
