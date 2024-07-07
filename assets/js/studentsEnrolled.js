@@ -14,7 +14,7 @@ if(token === null){
   window.location.replace("./courses.html")
 }else{
   
-  fetch(`http://localhost:3000/api/courses/${courseId}`)
+  fetch(`${baseURL}api/courses/${courseId}`)
 .then(res => res.json())
 .then(data => {
   console.log(data)
@@ -29,7 +29,7 @@ if(token === null){
       }else{
         data.enrollees.map(enrolled => {
 
-        fetch('http://localhost:3000/api/users/all',{
+        fetch(`${baseURL}api/users/all`,{
           headers:{
             'Authorization': `Bearer ${token}`
           }
