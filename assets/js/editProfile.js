@@ -19,6 +19,8 @@ let cancelButton = document.querySelector("#cancelButton")
 let saveButton = document.getElementById("saveButton")
 let swalContainer = document.querySelector("#swalContainer")
 
+import baseURL from "../baseURL/baseURL.js";
+
 firstNameInput.addEventListener("input", () => {
   if(firstName.placeholder === firstName.value){
     saveButton.disabled = true
@@ -51,7 +53,7 @@ mobileNoInput.addEventListener("input", () => {
   }
 })
 
-fetch('http://localhost:3000/api/users/details', {
+fetch(`${baseURL}api/users/details`, {
   headers: {
     'Authorization': `Bearer ${token}`
   }
@@ -100,7 +102,7 @@ fetch('http://localhost:3000/api/users/details', {
 
 
 
-      fetch('http://localhost:3000/api/users/update', {
+      fetch(`${baseURL}api/users/update`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',
