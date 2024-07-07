@@ -17,7 +17,7 @@ if(!token || token === null){
 		}
 	  })
 }else{
-	fetch('http://localhost:3000/api/users/details', {
+	fetch(`${baseURL}api/users/details`, {
 		headers: {
 			'Authorization': `Bearer ${token}`
 		}
@@ -57,7 +57,7 @@ let coursesContainer = document.querySelector("#coursesContainer");
 
 		data.enrollments.map(course => {
 			// console.log()
-			fetch(`http://localhost:3000/api/courses/${course.courseId}`)
+			fetch(`${baseURL}api/courses/${course.courseId}`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data)
