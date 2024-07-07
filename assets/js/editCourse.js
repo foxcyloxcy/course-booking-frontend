@@ -4,6 +4,7 @@ let courseId = params.get('courseId')
 let adminUser = localStorage.getItem("isAdmin")
 let token = localStorage.getItem("token");
 let swalContainer = document.querySelector("#swalContainer")
+import baseURL from "../baseURL/baseURL.js";
 
 // console.log(courseId)
 if(token === null){
