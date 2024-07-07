@@ -7,8 +7,9 @@ let courseId = params.get('courseId')
 // console.log(courseId)
 
 let token = localStorage.getItem('token')
+import baseURL from "../baseURL/baseURL.js";
 
-fetch(`http://localhost:3000/api/courses/${courseId}`, {
+fetch(`${baseURL}api/courses/${courseId}`, {
 	method: "PUT",
 	 headers: {
 	'Authorization': `Bearer ${token}`
