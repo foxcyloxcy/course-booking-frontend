@@ -35,7 +35,7 @@ let name = document.querySelector("#courseName")
 let price = document.querySelector("#coursePrice")
 let description = document.querySelector("#courseDescription")
 
-fetch(`http://localhost:3000/api/courses/${courseId}`)
+fetch(`${baseURL}api/courses/${courseId}`)
   .then((res) => res.json())
   .then((data) => {
     console.log(data)
@@ -54,7 +54,7 @@ fetch(`http://localhost:3000/api/courses/${courseId}`)
 
         let token = localStorage.getItem('token')
 
-        fetch('http://localhost:3000/api/courses', {
+        fetch(`${baseURL}api/courses`, {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json',
