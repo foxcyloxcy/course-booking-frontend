@@ -15,7 +15,7 @@ registerForm.addEventListener("submit", (e) => {
 	if((password1 !== '' && password2 !== '') && (password1 === password2) && (mobileNo.length === 11)){
 
 		//check if email exists
-		fetch('http://localhost:3000/api/users/email-exists', {
+		fetch(`${baseURL}api/users/email-exists`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ registerForm.addEventListener("submit", (e) => {
 		.then(res => res.json())
 		.then(data => {
 			if(data === false){
-				fetch('http://localhost:3000/api/users',{
+				fetch(`${baseURL}api/users`,{
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
