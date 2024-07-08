@@ -1,5 +1,6 @@
 //instantiate a URLSearchParams object so we can access specific parts of the query string
 let params = new URLSearchParams(window.location.search)
+let swalContainer = document.querySelector("#swalContainer")
 
 //get returns the value of the key passed as an argument, then we store it in a variable
 let courseId = params.get('courseId')
@@ -20,6 +21,11 @@ fetch(`${baseURL}api/courses/${courseId}`, {
 	if(data === true){
 		window.location.replace('./courses.html')
 	}else{
-		alert("Something went wrong.")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: "Something went wrong. Please try again.",
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		  })
 	}
 })
