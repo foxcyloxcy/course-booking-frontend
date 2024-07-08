@@ -71,6 +71,11 @@ registerForm.addEventListener("submit", (e) => {
 		})
 
 	}else{
-		alert("Something went wrong. Please re-enter your details.")
+		swalContainer.innerHTML = Swal.fire({
+			title: 'Ooops!',
+			text: 'Something went wrong. Please re-enter your details.',
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		  })
 	}
 })
