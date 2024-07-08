@@ -46,9 +46,24 @@ registerForm.addEventListener("submit", (e) => {
 
 					if(data === true){
 						alert("Sucessfully registered")
-						window.location.replace("./login.html")
+						swalContainer.innerHTML = Swal.fire({
+							title: 'Sucess',
+							text: "Profile details changed successfully.",
+							icon: 'success',
+							confirmButtonText: 'Ok'
+						  })
+						  .then((result) => {
+							if (result.isConfirmed) {
+								window.location.replace("./login.html")
+							}
+						  })
 					}else{
-						alert("Registration failed")
+						swalContainer.innerHTML = Swal.fire({
+							title: 'Registration failed.',
+							text: 'Registration unsuccessful, please try again.',
+							icon: 'error',
+							confirmButtonText: 'Ok'
+						  })
 					}
 
 				})
