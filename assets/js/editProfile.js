@@ -13,8 +13,6 @@ let lastNameInput = document.getElementById("lastName")
 let emailInput = document.getElementById("userEmail")
 let mobileNoInput = document.getElementById("contactNumber")
 
-
-let editProfile = document.querySelector("#editProfileButton")
 let cancelButton = document.querySelector("#cancelButton")
 let saveButton = document.getElementById("saveButton")
 let swalContainer = document.querySelector("#swalContainer")
