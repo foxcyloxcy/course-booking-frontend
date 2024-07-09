@@ -6,13 +6,29 @@ import baseURL from "../baseURL/baseURL.js";
 let swalContainer = document.querySelector("#swalContainer")
 
 if (token === null) {
-  alert("You cannot do that! \n Login first!")
-  window.location.replace("./login.html")
+  swalContainer.innerHTML = Swal.fire({
+    title: 'Ooops!',
+    text: 'You cannot do that! \n Login first!',
+    icon: 'error',
+    confirmButtonText: 'Ok'
+    }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.replace("./login.html")
+        }
+      })
 } else {
 
   if (adminUser === "false") {
-    alert("You cannot do that!")
-    window.location.replace("./courses.html")
+    swalContainer.innerHTML = Swal.fire({
+      title: 'Ooops!',
+      text: 'You cannot do that! \n You need to be an Admin to view this page.',
+      icon: 'error',
+      confirmButtonText: 'Ok'
+      }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.replace("./courses.html")
+          }
+        })
   } else {
 
     fetch(`${baseURL}api/courses/${courseId}`)
