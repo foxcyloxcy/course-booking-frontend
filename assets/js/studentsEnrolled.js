@@ -41,8 +41,16 @@ if (token === null) {
 
         // console.log(enrollees)
         if (data.enrollees.length === 0) {
-          alert("No enrolled student on this course! \n Return to courses.")
-          window.location.replace('./courses.html')
+          swalContainer.innerHTML = Swal.fire({
+            title: 'Ooops!',
+            text: 'No enrolled student on this course! \n Return to courses.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.replace("./courses.html")
+                }
+              })
         } else {
           data.enrollees.map(enrolled => {
 
