@@ -65,13 +65,13 @@ if (token === null) {
 							confirmButtonText: 'Yes',
 							denyButtonText: 'No',
 						})
-						.then((result) => {
-							if (result.isConfirmed) {
-								formReset.reset()
-							} else if (result.isDenied) {
-								window.location.replace("./courses.html")
-							}
-						  })
+							.then((result) => {
+								if (result.isConfirmed) {
+									formReset.reset()
+								} else if (result.isDenied) {
+									window.location.replace("./courses.html")
+								}
+							})
 					} else {
 						swalContainer.innerHTML = Swal.fire({
 							title: 'Ooops!',
